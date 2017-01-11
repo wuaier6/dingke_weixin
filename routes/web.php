@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::post('/Connection', 'Wechat\WechatController@Connection');
 Route::get('/Connection', 'Wechat\WechatController@Verify');
+
+
+Route::get('/Teacher/Bind', 'Teacher\TeacherController@Bind');

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a016f2c596f6a5cd809cda794be3ccbf",
-    "content-hash": "716b981ab7f69b1fc6f1c91ecb9d8cf6",
+    "hash": "c20b7245d7e8c881a5e5796b7ea10efc",
+    "content-hash": "a5776e18e466fa9f52c7bccf84a42338",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -230,6 +230,55 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "geohash/geohash",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eleme/geohash.git",
+                "reference": "1b7a1622799a82a29f24aed31920a844af61242d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/Eleme/geohash/1b7a1622799a82a29f24aed31920a844af61242d.zip",
+                "reference": "1b7a1622799a82a29f24aed31920a844af61242d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Geohash\\": "src",
+                    "Geohash\\Tests\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Lyu",
+                    "email": "jefferson.lyu@gmail.com",
+                    "homepage": "https://github.com/jlyu"
+                },
+                {
+                    "name": "Hongbo Tang",
+                    "email": "thbourlove@gmail.com"
+                }
+            ],
+            "description": "geohash package",
+            "homepage": "http://github.com/Eleme/geohash",
+            "keywords": [
+                "geohash"
+            ],
+            "time": "2014-03-18 11:06:23"
         },
         {
             "name": "guzzlehttp/guzzle",
