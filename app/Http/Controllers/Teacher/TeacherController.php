@@ -7,22 +7,27 @@ use App\Http\Controllers\Controller;
 use Wechat;
 use Log;
 use App\Repositories\TeacherWechatUserRepositoryEloquent;
+use App\Repositories\LessonRepositoryEloquent;
 class TeacherController extends Controller
 {
 
     protected $TeacherWechatUser;
-
+    protected $Lesson;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(TeacherWechatUserRepositoryEloquent $teacherwechatuser)
+    public function __construct(TeacherWechatUserRepositoryEloquent $teacherwechatuser,LessonRepositoryEloquent $lesson)
     {
         $this->TeacherWechatUser = $teacherwechatuser;
+        $this->Lesson = $lesson;
     }
 
 
+    /**
+     * 教师详细
+     */
     public function index()
     {
 
@@ -61,8 +66,9 @@ class TeacherController extends Controller
     {
         //判断唯一性
 
-       $result= $this->TeacherWechatUser->create(["teacher_id"=>1,"openid"=>1]);
+        $result= $this->TeacherWechatUser->create(["teacher_id"=>1,"openid"=>1]);
         print_r($result);
+
     }
 
     /**
@@ -72,6 +78,7 @@ class TeacherController extends Controller
     public function Lesson(Request $request)
     {
 
+       $lesson_list= $this->Lesson->findwhere(['company_id'=>,'teacher_id'=>''])->all();
     }
 
     /**
@@ -100,7 +107,5 @@ class TeacherController extends Controller
     {
 
     }
-
-
 
 }

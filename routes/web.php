@@ -27,5 +27,7 @@ Route::group(['prefix' => ''],function ($router)
     Route::group(['prefix' => 'teacher','namespace' => 'Teacher'],function ($router){
         $router->get('bind','TeacherController@Bind')->name('teacher.bind');
         $router->post('bind','TeacherController@DoBind')->name('teacher.dobind');
+
+        $router->post('lesson','TeacherController@Lesson')->name('teacher.lesson');
     });
 });

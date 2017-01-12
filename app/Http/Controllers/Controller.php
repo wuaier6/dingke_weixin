@@ -13,6 +13,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+
     /**
      * @param array|NULL $array
      *
