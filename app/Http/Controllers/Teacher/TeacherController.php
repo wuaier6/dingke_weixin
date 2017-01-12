@@ -48,7 +48,7 @@ class TeacherController extends Controller
         }
 
         //微信授权完成，获取高级授权信息
-        $wxOauthUser = $this->WechatOAuthCheck(false);
+       // $wxOauthUser = $this->WechatOAuthCheck(false);
 
         //判断此微信openid是否有关联正式账户
         $userId = $this->UserLoginCheck(false);
@@ -78,7 +78,7 @@ class TeacherController extends Controller
     public function Lesson(Request $request)
     {
 
-       $lesson_list= $this->Lesson->findwhere(['company_id'=>,'teacher_id'=>''])->all();
+      // $lesson_list= $this->Lesson->findwhere(['company_id'=>,'teacher_id'=>''])->all();
     }
 
     /**
