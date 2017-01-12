@@ -20,3 +20,5 @@ Route::get('/Connection', 'Wechat\WechatController@Verify');
 
 
 Route::get('/Teacher/Bind', 'Teacher\TeacherController@Bind');
+
+Route::get('/OauthCallback', 'Common\CommonController@OauthCallback');
