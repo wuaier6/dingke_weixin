@@ -7,9 +7,21 @@ use App\Http\Controllers\Controller;
 use Wechat;
 use Log;
 use Geohash\Geohash;
+use App\Repositories\WechatLbsRepositoryEloquent;
 
 class WechatController extends Controller
 {
+
+    protected $WechatLbs;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(WechatLbsRepositoryEloquent $WechatLbs)
+    {
+        $this->WechatLbs = $WechatLbs;
+    }
 
     public function Verify(Request $request)
     {
@@ -131,13 +143,19 @@ class WechatController extends Controller
         return true;
     }
 
+    /**
+     * 记录lbs
+     * @param $message
+     * @return bool
+     */
     private function Location($message){
-        $openid = $message->FromUserName;
-        $Latitude = $message->Latitude;
-        $Longitude = $message->Longitude;
-        $Precision = $message->Precision;
-        $Geohash= Geohash::encode($Latitude, $Longitude);
-        log::info("location".$Geohash);
+        $data['openid'] = $message->FromUserName;
+        $data['Latitude'] = $message->Latitude;
+        $data['Longitude'] = $message->Longitude;
+        $data['Precision'] = $message->Precision;
+        $data['Geohash']= Geohash::encode( $data['Latitude'],  $data['Longitude']);
+        $data['create_time']=time();
+        $this->WechatLbs->create($data);
         return true;
     }
 
